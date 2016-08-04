@@ -25,5 +25,9 @@
     "md5": "^2.1.0",
     "request": "^2.74.0",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.0",
+    "should": "^10.0.0"
   }
 }
