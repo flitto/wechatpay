@@ -1,9 +1,18 @@
 # node-wechatpay
 
+WeChatPay library for nodejs
+
+[![Build Status](https://travis-ci.org/flitto/wechatpay.svg?branch=master)](https://travis-ci.org/flitto/wechatpay)
+<span class="badge-npmversion"><a href="https://npmjs.org/package/wechatpay" title="View this project on NPM"><img src="https://img.shields.io/npm/v/wechatpay.svg" alt="NPM version" /></a></span>
+
+
 ## WeChatPay Document
+
 * [WeChatPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)
 
+
 ## Usage
+
 ```javascript
 var fs = require('fs');
 var WeChatPay = require('wechatpay').WeChatPay;
