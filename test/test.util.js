@@ -26,10 +26,10 @@ describe('util test cases', function() {
   });
 
   it('parserXML()', function(done) {
-    var xml = `<xml>
-        <return_code><![CDATA[SUCCESS]]></return_code>
-        <return_msg><![CDATA[OK]]></return_msg>
-      </xml>`;
+    var xml = '<xml>\
+        <return_code><![CDATA[SUCCESS]]></return_code>\
+        <return_msg><![CDATA[OK]]></return_msg>\
+      </xml>';
 
     util.parseXML(xml, function(err, data) {
       should.not.exists(err);
