@@ -1,6 +1,6 @@
 {
   "name": "wechatpay",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "wechatpay library",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/flitto/wechatpay#readme",
   "dependencies": {
     "md5": "^2.1.0",
+    "qr-image": "^3.1.0",
     "request": "^2.74.0",
+    "underscore": "^1.8.3",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {

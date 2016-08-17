@@ -38,4 +38,11 @@ describe('util test cases', function() {
       done();
     });
   });
+
+  it('getQRSvg()', function(done) {
+    var qr_svg = util.getQRSvg('https://www.flitto.com');
+    qr_svg.should.be.a.String();
+    done();
+  });
+
 });
