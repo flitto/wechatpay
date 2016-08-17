@@ -37,6 +37,20 @@ wpay.createUnifiedOrder({
   console.log(result);
 });
 
+// /pay/unifiedorder with QR SVG string
+wpay.createUnifiedOrder({
+  body: 'Product Name',
+  out_trade_no: new Date().getTime() + Math.random().toString().substr(2, 6),
+  total_fee: 100,   // 1 yuan
+  spbill_create_ip: '8.8.8.8',
+  notify_url: 'http://8.8.8.8',
+  trade_type: 'NATIVE',
+  product_id: '1234567890',
+  code_svg: true
+}, function(err, result){
+  console.log(result);  // result.code_svg - QR SVG string
+});
+
 // /pay/orderquery
 wpay.queryOrder({
   out_trade_no: 'xxx'
