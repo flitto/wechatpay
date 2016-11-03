@@ -11,6 +11,12 @@ WeChatPay library for nodejs
 * [WeChatPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)
 
 
+## Installation
+
+```sh
+npm install wechatpay
+```
+
 ## Usage
 
 ```javascript
@@ -49,6 +55,20 @@ wpay.createUnifiedOrder({
   code_svg: true
 }, function(err, result){
   console.log(result);  // result.code_svg - QR SVG string
+});
+
+// /pay/unifiedorder with trade_type='APP'
+wpay.createUnifiedOrder({
+  body: 'Product Name',
+  out_trade_no: new Date().getTime() + Math.random().toString().substr(2, 6),
+  total_fee: 100,   // 1 yuan
+  spbill_create_ip: '8.8.8.8',
+  notify_url: 'http://8.8.8.8',
+  trade_type: 'APP',
+  product_id: '1234567890'
+}, function(err, result){
+  console.log(result);  // result.app_sign - sign string with prepay_id for WeChat App
+                        // result.timestamp - signing timestamp for above app_sign
 });
 
 // /pay/orderquery
