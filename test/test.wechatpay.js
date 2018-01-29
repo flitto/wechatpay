@@ -1,12 +1,12 @@
-var should = require('should')
-  , WeChatPay = require('../lib/wechatpay').WeChatPay;
+const should = require('should');
+const WeChatPay = require('../lib/wechatpay').WeChatPay;
 
 describe('wechatpay test cases:', function() {
 
-  var wpay = new WeChatPay({appid: 'xxxxx', mch_id: 'xxxxx'});
+  const wpay = new WeChatPay({appid: 'xxxxx', mch_id: 'xxxxx'});
 
   it('call createUnifiedOrder() without initializing', function(done) {
-    var pay = new WeChatPay();
+    const pay = new WeChatPay();
     pay.createUnifiedOrder({}, function(err, data) {
       should.exist(err);
       done();

@@ -1,32 +1,32 @@
-var should = require('should')
-  , util = require('../lib/util');
+const should = require('should');
+const util = require('../lib/util');
 
 describe('util test cases', function() {
 
   it('generateNonceSting() with no parameter', function(done) {
-    var nonceStr = util.generateNonceString();
+    const nonceStr = util.generateNonceString();
     nonceStr.should.be.a.String();
     nonceStr.length.should.be.equal(32);
     done();
   });
 
   it('generateNonceSting(16)', function(done) {
-    var nonceStr = util.generateNonceString(16);
+    const nonceStr = util.generateNonceString(16);
     nonceStr.should.be.a.String();
     nonceStr.length.should.be.equal(16);
     done();
   });
 
   it('getXML()', function(done) {
-    var json = {return_code: 'SUCCESS', return_msg: 'OK'};
+    const json = {return_code: 'SUCCESS', return_msg: 'OK'};
 
-    var xml = util.getXML(json);
+    const xml = util.getXML(json);
     xml.should.be.a.String();
     done();
   });
 
   it('parserXML()', function(done) {
-    var xml = '<xml>\
+    const xml = '<xml>\
         <return_code><![CDATA[SUCCESS]]></return_code>\
         <return_msg><![CDATA[OK]]></return_msg>\
       </xml>';
@@ -40,7 +40,7 @@ describe('util test cases', function() {
   });
 
   it('getQRSvg()', function(done) {
-    var qr_svg = util.getQRSvg('https://www.flitto.com');
+    const qr_svg = util.getQRSvg('https://www.flitto.com');
     qr_svg.should.be.a.String();
     done();
   });
