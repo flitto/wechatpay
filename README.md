@@ -20,10 +20,10 @@ npm install wechatpay
 ## Usage
 
 ```javascript
-var fs = require('fs');
-var WeChatPay = require('wechatpay').WeChatPay;
+const fs = require('fs');
+const WeChatPay = require('wechatpay').WeChatPay;
 
-var wpay = new WeChatPay({
+const wpay = new WeChatPay({
   appid: 'xxx',
   mch_id: 'xxx',
   partner_key: 'xxx',
