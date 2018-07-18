@@ -98,20 +98,20 @@ wpay.refund({
 
 // /pay/refundquery
 wpay.refundQuery({
-  refund_id: 'www',       // priority 1
-  out_refund_no: 'xxx',   // priority 2
-  transaction_id: 'yyy',  // priority 3
-  out_trade_no: 'zzz'     // priority 4
+  refund_id: 'www',          // query with refund_id
+  // out_refund_no: 'xxx',   // or use out_refund_no
+  // transaction_id: 'yyy',  // or use transaction_id
+  // out_trade_no: 'zzz'     // or use out_trade_no
 }, function(err, result){
   console.log(result);
 });
 
 // /pay/refundquery with offset=24
 wpay.refundQuery({
-  refund_id: 'www',
-  out_refund_no: 'xxx',
-  transaction_id: 'yyy',
-  out_trade_no: 'zzz',
+  refund_id: 'www',          // query with refund_id
+  // out_refund_no: 'xxx',   // or use out_refund_no
+  // transaction_id: 'yyy',  // or use transaction_id
+  // out_trade_no: 'zzz',    // or use out_trade_no
   offset: 24
 }, function(err, result){
   console.log(result);
