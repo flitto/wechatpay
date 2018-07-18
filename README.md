@@ -96,6 +96,27 @@ wpay.refund({
   console.log(result);
 });
 
+// /pay/refundquery
+wpay.refundQuery({
+  refund_id: 'www',
+  out_refund_no: 'xxx',
+  transaction_id: 'yyy',
+  out_trade_no: 'zzz'
+}, function(err, result){
+  console.log(result);
+});
+
+// /pay/refundquery with offset=24
+wpay.refundQuery({
+  refund_id: 'www',
+  out_refund_no: 'xxx',
+  transaction_id: 'yyy',
+  out_trade_no: 'zzz',
+  offset: 24
+}, function(err, result){
+  console.log(result);
+});
+
 // /mmpaymkttransfers/promotion/transfers
 wpay.transfer({
   partner_trade_no: 'xxx',

@@ -41,6 +41,13 @@ describe('wechatpay test cases:', function() {
     });
   });
 
+  it('call refundQuery() with no paramter', function(done) {
+    wpay.refundQuery({}, function(err, data) {
+      should.exist(err);
+      done();
+    });
+  });
+
   it('call transfer() with no parameter', function(done) {
     wpay.transfer({}, function(err, data) {
       should.exist(err);
