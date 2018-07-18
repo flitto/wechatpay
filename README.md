@@ -98,10 +98,10 @@ wpay.refund({
 
 // /pay/refundquery
 wpay.refundQuery({
-  refund_id: 'www',
-  out_refund_no: 'xxx',
-  transaction_id: 'yyy',
-  out_trade_no: 'zzz'
+  refund_id: 'www',       // priority 1
+  out_refund_no: 'xxx',   // priority 2
+  transaction_id: 'yyy',  // priority 3
+  out_trade_no: 'zzz'     // priority 4
 }, function(err, result){
   console.log(result);
 });

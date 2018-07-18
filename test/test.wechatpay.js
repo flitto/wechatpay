@@ -54,5 +54,4 @@ describe('wechatpay test cases:', function() {
       done();
     });
   });
-
 });
