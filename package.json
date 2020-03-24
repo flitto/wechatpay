@@ -1,6 +1,6 @@
 {
   "name": "wechatpay",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "wechatpay library",
   "main": "index.js",
   "scripts": {
@@ -24,11 +24,11 @@
   "dependencies": {
     "md5": "^2.2.1",
     "qr-image": "^3.2.0",
-    "request": "^2.88.0",
-    "xml2js": "^0.4.19"
+    "request": "^2.88.2",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^7.1.1",
     "should": "^13.2.3"
   },
   "engines": {
