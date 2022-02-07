@@ -11,6 +11,12 @@ WeChatPay library for nodejs
 * [WeChatPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)
 
 
+## Breaking Changes (v1.0)
+
+* Support Promises (also support callback)
+* Use `unidci` module, remove `request` module
+* node >= v12.18
+
 ## Installation
 
 ```sh
@@ -20,15 +26,15 @@ npm install wechatpay
 ## Usage
 
 ```javascript
-const fs = require('fs');
-const WeChatPay = require('wechatpay').WeChatPay;
+const fs = require('fs')
+const WeChatPay = require('wechatpay').WeChatPay
 
 const wpay = new WeChatPay({
   appid: 'xxx',
   mch_id: 'xxx',
   partner_key: 'xxx',
   pfx: fs.readFileSync('./apiclient_cert.p12')
-});
+})
 
 // /pay/unifiedorder
 wpay.createUnifiedOrder({
@@ -39,9 +45,20 @@ wpay.createUnifiedOrder({
   notify_url: 'http://8.8.8.8',
   trade_type: 'NATIVE',
   product_id: '1234567890'
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
+wpay.createUnifiedOrder({ // with callback
+  body: 'Product Name',
+  out_trade_no: new Date().getTime() + Math.random().toString().substr(2, 6),
+  total_fee: 100,   // 1 yuan
+  spbill_create_ip: '8.8.8.8',
+  notify_url: 'http://8.8.8.8',
+  trade_type: 'NATIVE',
+  product_id: '1234567890'
+}, function (err, result) {
+  console.log(result)
+})
 
 // /pay/unifiedorder with QR SVG string
 wpay.createUnifiedOrder({
@@ -53,9 +70,9 @@ wpay.createUnifiedOrder({
   trade_type: 'NATIVE',
   product_id: '1234567890',
   code_svg: true
-}, function(err, result){
-  console.log(result);  // result.code_svg - QR SVG string
-});
+}).then((result) => {
+  console.log(result) // result.code_svg - QR SVG string
+})
 
 // /pay/unifiedorder with trade_type='APP'
 wpay.createUnifiedOrder({
@@ -66,24 +83,24 @@ wpay.createUnifiedOrder({
   notify_url: 'http://8.8.8.8',
   trade_type: 'APP',
   product_id: '1234567890'
-}, function(err, result){
-  console.log(result);  // result.app_sign - sign string with prepay_id for WeChat App
+}).then((result) => {
+  console.log(result) // result.app_sign - sign string with prepay_id for WeChat App
                         // result.timestamp - signing timestamp for above app_sign
-});
+})
 
 // /pay/orderquery
 wpay.queryOrder({
   out_trade_no: 'xxx'
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 
 // /pay/closeorder
 wpay.closeOrder({
   out_trade_no: 'xxx'
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 
 // /secapi/pay/refund
 wpay.refund({
@@ -92,9 +109,9 @@ wpay.refund({
   total_fee: 100,
   refund_fee: 100,
   op_user_id: 'zzz'
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 
 // /pay/refundquery
 wpay.refundQuery({
@@ -102,9 +119,9 @@ wpay.refundQuery({
   // out_refund_no: 'xxx',   // or use out_refund_no
   // transaction_id: 'yyy',  // or use transaction_id
   // out_trade_no: 'zzz'     // or use out_trade_no
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 
 // /pay/refundquery with offset=24
 wpay.refundQuery({
@@ -113,9 +130,9 @@ wpay.refundQuery({
   // transaction_id: 'yyy',  // or use transaction_id
   // out_trade_no: 'zzz',    // or use out_trade_no
   offset: 24
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 
 // /mmpaymkttransfers/promotion/transfers
 wpay.transfer({
@@ -125,7 +142,7 @@ wpay.transfer({
   amount: 100,
   desc: 'memo',
   spbill_create_ip: '8.8.8.8'
-}, function(err, result){
-  console.log(result);
-});
+}).then((result) => {
+  console.log(result)
+})
 ```

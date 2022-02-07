@@ -1,1 +1,1 @@
-module.exports = require('./lib/wechatpay');
+module.exports = require('./lib/wechatpay')
