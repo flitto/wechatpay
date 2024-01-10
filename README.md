@@ -10,6 +10,8 @@ WeChatPay library for nodejs
 
 * [WeChatPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1)
 
+## Breaking Changes (v1.1.2)
+* node >= v14
 
 ## Breaking Changes (v1.0)
 
